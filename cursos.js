@@ -33,7 +33,7 @@ let infoCurso = (indice, id, nombre, duracion, valor) => {
     setTimeout(function () {
         console.log("--------------------Curso#" + indice + "--------------------");
         console.log("ID: " + id + "; Nombre: " + nombre + "; Duración: " + duracion + "; Valor: " + valor);
-    }, 2000);
+    }, indice*2000);
 }
 
 let getInfoCurso = (id, nombre, duracion, valor) => {
@@ -42,5 +42,6 @@ let getInfoCurso = (id, nombre, duracion, valor) => {
 
 module.exports = {
     buscarCurso,
-    listadoCursos
+    listadoCursos,
+    infoCurso
 }

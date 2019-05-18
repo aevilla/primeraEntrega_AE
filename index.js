@@ -1,5 +1,5 @@
 // importar modulos
-const { buscarCurso, listadoCursos } = require("./cursos.js");
+const { buscarCurso, listadoCursos, infoCurso } = require("./cursos.js");
 const fs = require('fs');
 
 // solicitar datos con argv
@@ -38,12 +38,12 @@ const argv = require('yargs')
 if (argv.o == 1) {
     // listar cursos
     listadoCursos();
-
+    
 } else if (argv.o == 2) {
     // buscar curso
     console.log("Sr(a) " + argv.n + " el resultado de su busqueda es: ");
     console.log(buscarCurso(argv.i));
-    
+
     //Validar si el curso fue encontrado
     if (buscarCurso(argv.i) != "Curso no encontrado") {
         // Generar archivo
