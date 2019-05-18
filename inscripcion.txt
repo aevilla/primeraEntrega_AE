@@ -1,0 +1,8 @@
+Información del estudiante
+   Identificación: true
+   Nombre: Ariel Evilla
+Información del Curso 
+   Id: 100
+   Nombre: matematica
+   Duración: 10
+   Valor: 500

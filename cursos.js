@@ -19,7 +19,8 @@ let cursos = [
     }]
 
 let buscarCurso = (id) => {
-    return cursos.find(cursos => cursos.id == id)
+    let resultado = cursos.find(cursos => cursos.id == id);
+    return (typeof resultado !== "undefined") ? resultado : "Curso no encontrado";
 }
 
 let listadoCursos = () => {
@@ -35,8 +36,11 @@ let infoCurso = (indice, id, nombre, duracion, valor) => {
     }, 2000);
 }
 
+let getInfoCurso = (id, nombre, duracion, valor) => {
+    return ("ID: " + id + "; Nombre: " + nombre + "; Duración: " + duracion + "; Valor: " + valor);
+}
+
 module.exports = {
-    cursos,
     buscarCurso,
     listadoCursos
 }
