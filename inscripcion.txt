@@ -2,7 +2,7 @@ Información del estudiante
    Identificación: true
    Nombre: Ariel Evilla
 Información del Curso 
-   Id: 100
-   Nombre: matematica
+   Id: 200
+   Nombre: fisica
    Duración: 10
-   Valor: 500
+   Valor: 400

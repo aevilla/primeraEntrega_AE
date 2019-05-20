@@ -3,18 +3,7 @@ const { buscarCurso, listadoCursos, infoCurso } = require("./cursos.js");
 const fs = require('fs');
 
 // solicitar datos con argv
-const cursos = {
-    operacion: {
-        demand: true,
-        alias: 'o'
-    },
-}
-
 const datos = {
-    operacion: {
-        demand: true,
-        alias: 'o'
-    },
     nombre: {
         demand: true,
         alias: 'n'
@@ -30,16 +19,14 @@ const datos = {
 }
 
 const argv = require('yargs')
-    .command('consulta', 'Consulta de datos', cursos)
     .command('inscribir', 'Proceso de inscripción de curso', datos)
     .argv;
 
-// Operaciones
-if (argv.o == 1) {
+if (typeof argv.nombre == 'undefined') {
     // listar cursos
     listadoCursos();
-    
-} else if (argv.o == 2) {
+}
+else {
     // buscar curso
     console.log("Sr(a) " + argv.n + " el resultado de su busqueda es: ");
     console.log(buscarCurso(argv.i));
@@ -60,11 +47,9 @@ if (argv.o == 1) {
 
             fs.writeFile("inscripcion.txt", text, (error) => {
                 if (error) throw (error);
-                console.log("Archivo generado");
+                console.log("Archivo generado, incripción completada");
             });
         }
         crearArchivo();
     }
-} else {
-    console.log("Opción no valida, intentar con 1 (consulta) o 2(inscripción). Favor volver a intentarlo");
 }
